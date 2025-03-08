@@ -2,27 +2,16 @@
 #include <iostream>
 #include "Function.hpp"
 
-void compute_table(int table, int output[11]) {
-
-	for (int i = 0; i <= 10; ++i) {
-		output[i] = i * table;
-	}
-}
-
-void display_table(int table[11]) {
-
-	for (int i = 0; i <= 10; ++i) {
-		std::cout << i << " x " << table[1] << " = " << table[i] << std::endl;
-	}
-}
-
 int main() {
 
-	int table[11] = {0};
+	int a = 0;
+	float b = 0;
 
-	compute_table(9, table);
-	
-	display_table(table);
+	int* p_int = &a;
+	float* p_float = &b;
+
+	std::cout << "Valeur de a = " << a << " et son adresse : " << p_int << std::endl;
+	std::cout << "Valeur de b = " << b << " et son adresse : " << p_float << std::endl;
 
 	return 0;
 }
