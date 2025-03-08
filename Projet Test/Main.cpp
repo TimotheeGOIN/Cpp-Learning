@@ -1,25 +1,16 @@
 
 #include <iostream>
-#include "Function.hpp"
+#include <string>
+#include "Player.hpp"
 
 
 int main() {
 
-	int x = 10;
-	int y = 10;
+	Player player_1;
+	Player player_2;
+	Player player_3;
 
-	int** grid = new int*[y];
-
-	for (int i = 0; i < y; ++i) {
-		grid[i] = new int[x];
-	}
-
-	for (int i = 0; i < y; ++i) {
-		delete[] grid[i];
-	}
-
-	delete[] grid;
+	player_1.attack(player_2);
 
 	return 0;
 }
-
