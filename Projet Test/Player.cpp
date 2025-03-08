@@ -5,8 +5,10 @@
 Player::Player() :
 	m_name(""),
 	m_health_points(10),
-	m_damages(2) {
+	m_damages(2), 
+	m_data(nullptr) {
 
+	m_data = new int();
 }
 
 Player::Player(const Player& player) :
@@ -23,10 +25,15 @@ Player::Player(const std::string name, float health_points, float damages) :
 
 }
 
+Player::~Player() {
+	std::cout << "Destructor" << std::endl;
+
+	if (m_data != nullptr) {
+		delete m_data;
+	}
+}
+
 bool Player::is_dead() {
-
-	std::cout << m_name << " is dead..." << std::endl;
-
 	return m_health_points <= 0;
 }
 
@@ -34,5 +41,5 @@ void Player::attack(Player& other) {
 
 	other.m_health_points -= m_damages;
 
-	std::cout << m_name << " attacks " << other.m_name << " ! -" << m_damages << "(" << other.m_health_points << " now)" << std::endl;
+	std::cout << m_name << " attacks " << other.m_name << " ! -" << m_damages << " (" << other.m_health_points << " now)" << std::endl;
 }
