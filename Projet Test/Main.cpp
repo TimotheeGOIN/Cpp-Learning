@@ -2,16 +2,23 @@
 #include <iostream>
 #include "Function.hpp"
 
+
 int main() {
 
-	int a = 0;
-	float b = 0;
+	int x = 10;
+	int y = 10;
 
-	int* p_int = &a;
-	float* p_float = &b;
+	int** grid = new int*[y];
 
-	std::cout << "Valeur de a = " << a << " et son adresse : " << p_int << std::endl;
-	std::cout << "Valeur de b = " << b << " et son adresse : " << p_float << std::endl;
+	for (int i = 0; i < y; ++i) {
+		grid[i] = new int[x];
+	}
+
+	for (int i = 0; i < y; ++i) {
+		delete[] grid[i];
+	}
+
+	delete[] grid;
 
 	return 0;
 }
