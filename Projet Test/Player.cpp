@@ -59,3 +59,4 @@ int Player::get_damages() const {
 void Player::set_damages(int damages) {
 	m_damages = damages;
 }
+
